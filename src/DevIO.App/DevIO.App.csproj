@@ -54,5 +54,9 @@
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
     <Folder Include="AutoMapper\" />
+    <Folder Include="wwwroot\imagens\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\imagens\" />
   </ItemGroup>
 </Project>
