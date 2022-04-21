@@ -23,7 +23,7 @@ namespace DevIO.App.ViewModels
         public EnderecoViewModel? Endereco { get; set; }
 
         [DisplayName("Ativo?")]
-        public bool Atvo { get; set; }
+        public bool Ativo { get; set; }
 
         public IEnumerable<ProdutoViewModel>? Produtos { get; set; }
     }

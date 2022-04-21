@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-DevIO.App-334AB9F2-1E61-4131-8CD6-80665CA44543</UserSecretsId>
   </PropertyGroup>
@@ -16,6 +15,9 @@
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
     <None Remove="AutoMapper\" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="Extensions\" />
+    <None Remove="Microsoft.Extensions.Configuration" />
+    <None Remove="Swashbuckle.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -37,6 +39,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.2" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,6 +59,7 @@
     <Folder Include="Data\Migrations\" />
     <Folder Include="AutoMapper\" />
     <Folder Include="wwwroot\imagens\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\imagens\" />

@@ -1,3 +1,4 @@
+﻿@using DevIO.App.Extensions
 @model IEnumerable<DevIO.App.ViewModels.FornecedorViewModel>
 
 @{
@@ -19,7 +20,7 @@
                 @Html.DisplayNameFor(model => model.Documento)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Atvo)
+                @Html.DisplayNameFor(model => model.Ativo)
             </th>
             <th></th>
         </tr>
@@ -31,10 +32,10 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Documento)
+                @this.FormataDocumento(item.TipoFornecedor, item.Documento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Atvo)
+                @Html.DisplayFor(modelItem => item.Ativo)
             </td>
             <td class="text-right">
                 <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><spam class="fa fa-search"></spam></a>
