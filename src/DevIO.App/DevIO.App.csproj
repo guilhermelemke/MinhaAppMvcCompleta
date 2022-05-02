@@ -6,6 +6,9 @@
     <UserSecretsId>aspnet-DevIO.App-334AB9F2-1E61-4131-8CD6-80665CA44543</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'DevIO.App - Prod' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'DevIO.App - Dev' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'DevIO.App - Stage' " />
   <ItemGroup>
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
@@ -18,6 +21,7 @@
     <None Remove="Extensions\" />
     <None Remove="Microsoft.Extensions.Configuration" />
     <None Remove="Swashbuckle.AspNetCore" />
+    <None Remove="Configurations\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -60,6 +64,7 @@
     <Folder Include="AutoMapper\" />
     <Folder Include="wwwroot\imagens\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Configurations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\imagens\" />
