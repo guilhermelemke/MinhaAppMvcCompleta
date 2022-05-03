@@ -1,4 +1,4 @@
-#nullable disable
+﻿#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,12 +30,14 @@ namespace DevIO.App.Controllers
         }
 
         // GET: Produtos
+        [Route("lista-de-produtos")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores()));
         }
 
         // GET: Produtos/Details/5
+        [Route("dados-do-produto/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -49,6 +51,7 @@ namespace DevIO.App.Controllers
         }
 
         // GET: Produtos/Create
+        [Route("novo-produto")]
         public async Task<IActionResult> Create()
         {
             var produtoViewModel = await PopularFornecedores(new ProdutoViewModel());
@@ -61,6 +64,7 @@ namespace DevIO.App.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("novo-produto")]
         public async Task<IActionResult> Create(ProdutoViewModel produtoViewModel)
         {
             produtoViewModel = await PopularFornecedores(produtoViewModel);
@@ -81,6 +85,7 @@ namespace DevIO.App.Controllers
         }
 
         // GET: Produtos/Edit/5
+        [Route("editar-produto/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -98,6 +103,7 @@ namespace DevIO.App.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("editar-produto/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id, ProdutoViewModel produtoViewModel)
         {
             if (id != produtoViewModel.Id) return NotFound();
@@ -129,6 +135,7 @@ namespace DevIO.App.Controllers
         }
 
         // GET: Produtos/Delete/5
+        [Route("excluir-produto/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var produto = await ObterProduto(id);
@@ -144,6 +151,7 @@ namespace DevIO.App.Controllers
         // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Route("excluir-produto/{id:guid}")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var produto = await ObterProduto(id);
