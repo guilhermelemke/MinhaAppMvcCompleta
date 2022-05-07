@@ -8,20 +8,23 @@
   <ItemGroup>
     <None Remove="Models\" />
     <None Remove="Services\" />
-    <None Remove="Validations\" />
     <None Remove="Interfaces\" />
     <None Remove="Notificacoes\" />
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Microsoft.EntityFrameworkCore.Relational" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Models\Validations\" />
+    <None Remove="FluentValidation" />
+    <None Remove="Models\Validations\Documentos\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Services\" />
-    <Folder Include="Validations\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Notificacoes\" />
+    <Folder Include="Models\Validations\" />
+    <Folder Include="Models\Validations\Documentos\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />
@@ -37,5 +40,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="FluentValidation" Version="11.0.0" />
   </ItemGroup>
 </Project>
