@@ -42,7 +42,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.2" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
   </ItemGroup>
@@ -63,10 +63,13 @@
     <Folder Include="Data\Migrations\" />
     <Folder Include="AutoMapper\" />
     <Folder Include="wwwroot\imagens\" />
-    <Folder Include="Extensions\" />
     <Folder Include="Configurations\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="Views\Shared\Components\Summary\Default.cshtml" />
     <Content Remove="wwwroot\imagens\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Views\Shared\Components\Summary\Default.cshtml" />
   </ItemGroup>
 </Project>

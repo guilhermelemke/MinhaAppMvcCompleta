@@ -11,7 +11,8 @@ namespace DevIO.Business.Services
         private readonly IEnderecoRepository _enderecoRepository;
 
         public FornecedorService(IFornecedorRepository fornecedorRepository,
-                                 IEnderecoRepository enderecoRepository)
+                                 IEnderecoRepository enderecoRepository,
+                                 INotificador notificador) : base(notificador)
         {
             _fornecedorRepository = fornecedorRepository;
             _enderecoRepository = enderecoRepository;
@@ -19,7 +20,8 @@ namespace DevIO.Business.Services
 
         public async Task Adicionar(Fornecedor fornecedor)
         {
-            if (!ExecutarValidacao(new FornecedorValidation(), fornecedor)) return;
+            if (!ExecutarValidacao(new FornecedorValidation(), fornecedor)
+                || !ExecutarValidacao(new EnderecoValidation(), fornecedor.Endereco)) return;
 
             if (_fornecedorRepository.Buscar(f => f.Documento == fornecedor.Documento).Result.Any())
             {
@@ -59,6 +61,12 @@ namespace DevIO.Business.Services
             }
 
             await _fornecedorRepository.Remover(id);
+        }
+
+        public void Dispose()
+        {
+            _fornecedorRepository?.Dispose();
+            _enderecoRepository?.Dispose();
         }
     }
 }
