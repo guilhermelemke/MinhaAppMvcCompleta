@@ -1,9 +1,9 @@
-﻿namespace DevIO.App.ViewModels;
-
-public class ErrorViewModel
+﻿namespace DevIO.App.ViewModels
 {
-    public string? RequestId { get; set; }
-
-    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    public class ErrorViewModel
+    {
+        public int ErroCode { get; set; }
+        public string Titulo { get; set; }
+        public string Mensagem { get; set; }
+    }
 }
-
