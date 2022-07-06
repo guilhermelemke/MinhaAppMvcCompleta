@@ -1,10 +1,10 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DevIO.App.Configurations
 {
-	public static class MvcConfig
-	{
+    public static class MvcConfig
+    {
         public static IServiceCollection AddMvcConfiguration(this IServiceCollection services)
         {
             services.AddDatabaseDeveloperPageExceptionFilter();
@@ -32,4 +32,3 @@ namespace DevIO.App.Configurations
         }
     }
 }
-

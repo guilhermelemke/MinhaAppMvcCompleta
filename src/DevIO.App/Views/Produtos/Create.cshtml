@@ -1,4 +1,4 @@
-@model DevIO.App.ViewModels.ProdutoViewModel
+﻿@model DevIO.App.ViewModels.ProdutoViewModel
 
 @{
     ViewData["Title"] = "Novo Produto";
@@ -63,11 +63,13 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
-    <script>$("#ImagemUpload").change(function () {
+    <script>
+        $("#ImagemUpload").change(function () {
             $("#img_nome").text(this.files[0].name);
             $("#img_nome")[0].style.display = 'block';
         });
 
         $("#ImagemUpload").attr("data-val", "true");
-        $("#ImagemUpload").attr("data-val-required", "Preencha o campo Imagem");</script>
+        $("#ImagemUpload").attr("data-val-required", "Preencha o campo Imagem");
+    </script>
 }

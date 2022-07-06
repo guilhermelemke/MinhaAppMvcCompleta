@@ -1,5 +1,4 @@
-﻿#nullable disable
-using DevIO.Business.Interfaces;
+﻿using DevIO.Business.Intefaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevIO.App.Controllers
@@ -8,7 +7,7 @@ namespace DevIO.App.Controllers
     {
         private readonly INotificador _notificador;
 
-        public BaseController(INotificador notificador)
+        protected BaseController(INotificador notificador)
         {
             _notificador = notificador;
         }

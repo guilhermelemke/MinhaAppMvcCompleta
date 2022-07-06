@@ -1,12 +1,11 @@
-﻿using System;
-using DevIO.Business.Models;
+﻿using DevIO.Business.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DevIO.Data.Mappings
 {
-	public class FornecedorMapping : IEntityTypeConfiguration<Fornecedor>
-	{
+    public class FornecedorMapping : IEntityTypeConfiguration<Fornecedor>
+    {
         public void Configure(EntityTypeBuilder<Fornecedor> builder)
         {
             builder.HasKey(p => p.Id);

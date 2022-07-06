@@ -1,12 +1,11 @@
-﻿using System;
-using DevIO.App.Data;
+﻿using DevIO.App.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevIO.App.Configurations
 {
-	public static class IdentityConfig
-	{
+    public static class IdentityConfig
+    {
         public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, ConfigurationManager configuration)
         {
             services.Configure<CookiePolicyOptions>(options =>
@@ -25,4 +24,3 @@ namespace DevIO.App.Configurations
         }
     }
 }
-

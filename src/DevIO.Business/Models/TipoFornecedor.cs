@@ -1,10 +1,8 @@
-﻿using System;
-namespace DevIO.Business.Models
+﻿namespace DevIO.Business.Models
 {
-	public enum TipoFornecedor
-	{
-		PessoaFisica = 1,
-		PessoaJuridica
-	}
+    public enum TipoFornecedor
+    {
+        PessoaFisica = 1,
+        PessoaJuridica
+    }
 }
-

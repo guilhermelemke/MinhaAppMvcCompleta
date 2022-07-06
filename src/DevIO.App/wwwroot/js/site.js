@@ -9,8 +9,8 @@
                     $('#myModalContent').load(this.href,
                         function () {
                             $('#myModal').modal({
-                                keyboard: true
-                            },
+                                    keyboard: true
+                                },
                                 'show');
                             bindForm(this);
                         });
@@ -107,5 +107,5 @@ function BuscaCep() {
 }
 
 $(document).ready(function () {
-    $("#msg_box").fadeOut(2500);
+	$("#msg_box").fadeOut(2500);
 });

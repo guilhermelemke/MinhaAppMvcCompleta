@@ -1,4 +1,6 @@
-﻿using DevIO.Business.Interfaces;
+﻿using System.Collections.Generic;
+using System.Linq;
+using DevIO.Business.Intefaces;
 
 namespace DevIO.Business.Notificacoes
 {

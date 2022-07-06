@@ -1,4 +1,4 @@
-﻿using DevIO.Business.Interfaces;
+﻿using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
 using DevIO.Business.Notificacoes;
 using FluentValidation;
@@ -7,7 +7,7 @@ using FluentValidation.Results;
 namespace DevIO.Business.Services
 {
     public abstract class BaseService
-	{
+    {
         private readonly INotificador _notificador;
 
         protected BaseService(INotificador notificador)
@@ -15,15 +15,15 @@ namespace DevIO.Business.Services
             _notificador = notificador;
         }
 
-		protected void Notificar(ValidationResult validationResult)
+        protected void Notificar(ValidationResult validationResult)
         {
-			foreach (var error in validationResult.Errors)
+            foreach (var error in validationResult.Errors)
             {
                 Notificar(error.ErrorMessage);
             }
         }
 
-		protected void Notificar(string mensagem)
+        protected void Notificar(string mensagem)
         {
             _notificador.Handle(new Notificacao(mensagem));
         }
@@ -32,12 +32,11 @@ namespace DevIO.Business.Services
         {
             var validator = validacao.Validate(entidade);
 
-            if (validator.IsValid) return true;
+            if(validator.IsValid) return true;
 
             Notificar(validator);
 
             return false;
         }
-	}
+    }
 }
-

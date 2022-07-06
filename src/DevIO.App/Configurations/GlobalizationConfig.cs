@@ -1,11 +1,12 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Globalization;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
 
 namespace DevIO.App.Configurations
 {
-	public static class GlobalizationConfig
-	{
+    public static class GlobalizationConfig
+    {
         public static IApplicationBuilder UseGlobalizationConfig(this IApplicationBuilder app)
         {
             var defaultCulture = new CultureInfo("pt-BR");
@@ -21,4 +22,3 @@ namespace DevIO.App.Configurations
         }
     }
 }
-

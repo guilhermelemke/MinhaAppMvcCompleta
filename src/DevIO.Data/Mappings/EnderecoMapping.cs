@@ -1,12 +1,11 @@
-﻿using System;
-using DevIO.Business.Models;
+﻿using DevIO.Business.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DevIO.Data.Mappings
 {
-	public class EnderecoMapping : IEntityTypeConfiguration<Endereco>
-	{
+    public class EnderecoMapping : IEntityTypeConfiguration<Endereco>
+    {
         public void Configure(EntityTypeBuilder<Endereco> builder)
         {
             builder.HasKey(p => p.Id);
@@ -24,7 +23,6 @@ namespace DevIO.Data.Mappings
                 .HasColumnType("varchar(8)");
 
             builder.Property(c => c.Complemento)
-                .IsRequired()
                 .HasColumnType("varchar(250)");
 
             builder.Property(c => c.Bairro)
@@ -43,4 +41,3 @@ namespace DevIO.Data.Mappings
         }
     }
 }
-
